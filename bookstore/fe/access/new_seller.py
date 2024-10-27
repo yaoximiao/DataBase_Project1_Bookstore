@@ -8,6 +8,8 @@ def register_new_seller(user_id, password) -> seller.Seller:
     print("password="+str(password))
     code = a.register(user_id, password)
     print("code="+str(code))
+    print("验证断言")
+    print(code == 200)
     assert code == 200
     s = seller.Seller(conf.URL, user_id, password)
     return s

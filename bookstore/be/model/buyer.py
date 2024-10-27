@@ -195,3 +195,5 @@ class Buyer(db_conn.DBConn):
         # return self.db.user_store.count_documents({"store_id": store_id}) > 0
         user_store = self.get_collection("user_store")
         return user_store.count_documents({"store_id": store_id}) > 0
+    
+   

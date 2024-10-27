@@ -14,8 +14,7 @@ class Seller(db_conn.DBConn):
                 return error.error_non_exist_store_id(store_id)
             if self.book_id_exist(store_id, book_id):
                 return error.error_exist_book_id(book_id)
-
-            # store_collection = self.db.get_collection('store')
+            
             stores = self.get_collection("stores")
             result = stores.insert_one({
                 'store_id': store_id,

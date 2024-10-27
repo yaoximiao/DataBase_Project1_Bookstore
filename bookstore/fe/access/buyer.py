@@ -48,3 +48,60 @@ class Buyer:
         headers = {"token": self.token}
         r = requests.post(url, headers=headers, json=json)
         return r.status_code
+    
+    # def add_funds(self, add_value: str) -> int:
+    #     json = {
+    #         "user_id": self.user_id,
+    #         "password": self.password,
+    #         "add_value": add_value,
+    #     }
+    #     url = urljoin(self.url_prefix, "add_funds")
+    #     headers = {"token": self.token}
+    #     r = requests.post(url, headers=headers, json=json)
+    #     return r.status_code
+
+    # # 搜索功能
+    # def search(self, search_key:str, page: int) -> (int,list):
+    #     json = {
+    #         "search_key": search_key,
+    #         "page": page,
+    #     }
+    #     url = urljoin(self.url_prefix, "search")
+    #     headers = {"token": self.token}
+    #     r = requests.post(url, headers=headers, json=json)
+    #     response_json = r.json()
+    #     return r.status_code, response_json.get("result")
+
+
+    # def search_many(self, search_key:list) -> (int,list):
+    #     json = {
+    #         "search_key": search_key,
+    #     }
+    #     url = urljoin(self.url_prefix, "search_many")
+    #     headers = {"token": self.token}
+    #     r = requests.post(url, headers=headers, json=json)
+    #     response_json = r.json()
+    #     return r.status_code, response_json.get("result")
+
+    # def search_in_store(self, store_id:str, search_key:str, page: int) -> (int,list):
+    #     json = {
+    #         "store_id":store_id,
+    #         "search_key": search_key,
+    #         "page": page,
+    #     }
+    #     url = urljoin(self.url_prefix, "search_in_store")
+    #     headers = {"token": self.token}
+    #     r = requests.post(url, headers=headers, json=json)
+    #     response_json = r.json()
+    #     print(response_json)
+    #     return r.status_code, response_json.get("result")
+
+    # def get_books_info(self, books:list) -> (int,list):
+    #     json = {
+    #         "books": books,
+    #     }
+    #     url = urljoin(self.url_prefix, "get_books_info")
+    #     headers = {"token": self.token}
+    #     r = requests.post(url, headers=headers, json=json)
+    #     response_json = r.json()
+    #     return r.status_code, response_json.get("result")
