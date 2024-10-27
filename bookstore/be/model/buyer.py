@@ -66,7 +66,8 @@ class Buyer(db_conn.DBConn):
                     "order_id": uid,
                     "book_id": book_id,
                     "count": count,
-                    "price": price
+                    "price": price,
+                    "status": "not pay"
                 })
 
             orders.insert_one({
@@ -146,8 +147,12 @@ class Buyer(db_conn.DBConn):
             if result.modified_count == 0:
                 return error.error_non_exist_user_id(seller_id)
 
-            orders.delete_one({"order_id": order_id})
-            order_details.delete_many({"order_id": order_id})
+            result = order_details.update_one(
+                {"order_id":order_id, "status": "not pay"},
+                {"$set": {"status": "paid"}}
+            )
+            # orders.delete_one({"order_id": order_id})
+            # order_details.delete_many({"order_id": order_id})
 
         except PyMongoError as e:
             return 528, f"{str(e)}"
