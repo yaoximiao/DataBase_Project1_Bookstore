@@ -1,0 +1,38 @@
+bookstore
+  |-- be                            后端
+        |-- model                     后端逻辑代码
+            |-- db_conn.py
+            |-- seller.py
+            |-- store.py
+            |-- user.py
+            |-- error.py
+            |-- buyer.py
+        |-- view                      访问后端接口
+            |-- auth.py
+            |-- buyer.py
+            |-- seller.py
+        |-- __init__.py
+        |-- app.py
+        |-- serve.py
+  |-- doc                           JSON API规范说明
+        |--auth.md
+        |--buyer.md
+        |--seller.md       
+  |-- fe                            前端访问与测试代码
+        |-- access
+            |-- _init_.py
+            |-- auth.py
+            |-- book.py
+            |-- buyer.py
+            |-- new buyer.py
+            |-- new seller.py
+            |-- seller.py
+        |-- bench                     效率测试
+        |-- data                    
+            |-- book.db                 
+            |-- scraper.py              从豆瓣爬取的图书信息数据的代码
+        |-- test                      功能性测试（包含对前60%功能的测试，不要修改已有的文件，可以提pull request或bug）
+        |-- conf.py                   测试参数，修改这个文件以适应自己的需要
+        |-- conftest.py               pytest初始化配置，修改这个文件以适应自己的需要
+        |-- ....
+  |-- ....
